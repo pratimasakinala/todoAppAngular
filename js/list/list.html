@@ -1,0 +1,6 @@
+<div class="list">
+  <li ng-repeat="entry in todoCtrl.list()"
+      class="entry">{{entry}}
+    <span class="delete glyphicon glyphicon-trash"
+          ng-click="todoCtrl.deleteItem(entry)"></span></li>
+</div>

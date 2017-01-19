@@ -1,0 +1,35 @@
+.todo {
+  background-color: #7FFFD4!important;
+  display: flex;
+  flex-flow: wrap;
+  margin: 0 100px;
+}
+
+.todo > .todoInput {
+  flex: 5;
+  margin-right: 20px;
+  padding: 5px;
+}
+
+.todo > .btn {
+  flex: 1;
+}
+
+.list {
+  margin: 0 160px;
+  display: flex;
+  flex-direction: column;
+}
+
+.entry {
+  height: 40px;
+}
+
+.delete {
+  float: right;
+}
+
+.delete:hover {
+  color: red;
+  cursor: pointer;
+}
