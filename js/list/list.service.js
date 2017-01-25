@@ -5,16 +5,17 @@ angular.module('todoApp')
     this.addToList = (item) => {
       console.log('adding '+ item + ' to list');
 
-      let items = checkLocalStorage();
+      let items = this.checkLocalStorage();
       items.push(item);
 
       localStorage.setItem('todo', JSON.stringify(items));
+      
     };
 
     this.deleteItem = (item) => {
       console.log('deleting ' + item + ' from list');
 
-      let items = checkLocalStorage(),
+      let items = this.checkLocalStorage(),
         index = items.indexOf(item);
 
       if (index >= 0) items.splice(index, 1);
@@ -23,11 +24,11 @@ angular.module('todoApp')
     }
 
     this.list = () => {
-      let items = checkLocalStorage();
+      let items = this.checkLocalStorage();
       if (items) return items;
     };
 
-    function checkLocalStorage() {
+    this.checkLocalStorage =() => {
       var items = localStorage.getItem('todo');
 
       if (items !== null && items !== undefined) items = JSON.parse(items);
