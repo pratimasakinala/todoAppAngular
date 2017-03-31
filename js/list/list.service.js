@@ -2,6 +2,7 @@ angular.module('todoApp')
   .service('List', List);
 
   function List() {
+    this.name = 'Amy';
     this.addToList = (item) => {
       console.log('adding '+ item + ' to list');
 
@@ -9,7 +10,7 @@ angular.module('todoApp')
       items.push(item);
 
       localStorage.setItem('todo', JSON.stringify(items));
-      
+
     };
 
     this.deleteItem = (item) => {
